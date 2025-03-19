@@ -3,6 +3,7 @@ from pathlib import Path
 
 
 def GetAppId():
+    #Requires the file app_id.txt exists.  The only contents of this file are the AppId provided by OpenWeatherMap.com.
     path = Path(__file__).parent / "../app_id.txt"
     with path.open() as f:
         key = open(path, 'r').read()
