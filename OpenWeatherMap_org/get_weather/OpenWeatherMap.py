@@ -15,6 +15,7 @@ def GetAppId():
 def GetWeatherByZip(zip):
     app_id = GetAppId()
     api_call = _weather_base_url + "units=" + _units + "&zip=" + zip + "&appid=" + app_id
+
     resp = requests.get(api_call).json()
     return resp
 
@@ -30,6 +31,6 @@ def GetWeatherByCityStateCountry(city, state, country):
     #add country if not empty
     if len(country) > 0:
         api_call += f",{country}"
-
+    
     resp = requests.get(api_call).json()
     return resp
